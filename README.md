@@ -184,9 +184,9 @@ screenshots/
 
 ---
 
-GitHub:
-https://github.com/Avish-2027
-
+Created By:
+-> Divyanshi Chauhan
+-> Avish Chauhan
 ---
 
 ## ⭐ If you found this project useful, consider giving it a star!
