@@ -185,8 +185,8 @@ screenshots/
 ---
 
 Created By:
--> Divyanshi Chauhan
--> Avish Chauhan
+- Divyanshi Chauhan
+- Avish Chauhan
 ---
 
 ## ⭐ If you found this project useful, consider giving it a star!
