@@ -100,7 +100,6 @@ Created By:
 - Divyanshi Chauhan
 - Avish Chauhan
 ---
-
 <img width="1128" height="476" alt="image" src="https://github.com/user-attachments/assets/78a7767b-0cc4-458c-b51c-fcffe7de9091" />
 
 <img width="1128" height="900" alt="image" src="https://github.com/user-attachments/assets/0931e55a-331e-4e59-8e39-a94c70c22c7b" />
