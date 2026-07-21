@@ -100,6 +100,10 @@ Created By:
 - Divyanshi Chauhan
 - Avish Chauhan
 ---
-## ⭐ If you found this project useful, consider giving it a star!
+
 <img width="1128" height="476" alt="image" src="https://github.com/user-attachments/assets/78a7767b-0cc4-458c-b51c-fcffe7de9091" />
+
 <img width="1128" height="900" alt="image" src="https://github.com/user-attachments/assets/0931e55a-331e-4e59-8e39-a94c70c22c7b" />
+
+<img width="1112" height="830" alt="image" src="https://github.com/user-attachments/assets/78a47ac3-e269-43bc-bafd-f4e305ec0a4c" />
+
