@@ -4,7 +4,6 @@ Nova is an AI-powered Discord bot built using **Spring Boot**, **JDA**, **Groq A
 
 It provides AI-powered explanations, interactive quizzes, flashcards, code debugging, study roadmaps, XP-based gamification, and moderation tools—all in one place.
 
----
 
 ---
 ## ✨ Features
