@@ -1,6 +1,11 @@
 # 🤖 Nova – AI Powered Discord Study Assistant
+
 Nova is an AI-powered Discord bot built using **Spring Boot**, **JDA**, **Groq AI**, and **MySQL** that helps students learn more effectively without leaving Discord.
-It provides AI-powered explanations, interactive quizzes, flashcards, code debugging, study roadmaps, PDF summarization, XP-based gamification, and moderation tools—all in one place.
+
+It provides AI-powered explanations, interactive quizzes, flashcards, code debugging, study roadmaps, XP-based gamification, and moderation tools—all in one place.
+
+---
+
 ---
 ## ✨ Features
 ### 🎓 AI Learning Assistant
