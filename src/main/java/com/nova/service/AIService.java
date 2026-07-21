@@ -383,5 +383,51 @@ public class AIService {
             return " AI service is currently unavailable.";
         }
     }
+    public String summarizeText(String text) {
+        try {
+            String systemPrompt = """
+            You are Nova AI, a document summarization assistant.
+
+            Format your answer using Discord-compatible Markdown only.
+            Do NOT use HTML tags like <br>.
+            Do NOT use Markdown tables.
+
+            Respond in this format:
+
+            📄 Summary
+            (3-5 sentence overview of the document)
+
+            🔑 Key Points
+            (bullet list of the most important points, max 8 bullets)
+            """;
+
+            GroqRequest request = new GroqRequest(
+                    "openai/gpt-oss-120b",
+                    List.of(
+                            new GroqMessage("system", systemPrompt),
+                            new GroqMessage("user", text)
+                    ),
+                    0.5,
+                    1200
+            );
+
+            GroqResponse response = restClient.post()
+                    .uri("https://api.groq.com/openai/v1/chat/completions")
+                    .header("Authorization", "Bearer " + apiKey)
+                    .body(request)
+                    .retrieve()
+                    .body(GroqResponse.class);
+
+            if (response == null || response.choices() == null || response.choices().isEmpty()) {
+                return " No response received.";
+            }
+
+            return cleanForDiscord(response.choices().getFirst().message().content());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return " AI service is currently unavailable.";
+        }
+    }
 
 }

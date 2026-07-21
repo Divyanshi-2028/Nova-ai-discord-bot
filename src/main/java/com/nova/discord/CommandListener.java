@@ -73,6 +73,10 @@ public class CommandListener extends ListenerAdapter {
                 commandService.handleFlowchart(event);
                 break;
 
+            case "summarizepdf":
+                commandService.handleSummarizePdf(event);
+                break;
+
             default:
                 event.reply(" Unknown command!")
                         .setEphemeral(true)

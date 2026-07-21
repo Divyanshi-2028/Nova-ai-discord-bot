@@ -81,6 +81,13 @@ public class SlashCommandManager {
                                         "topic",
                                         "The process or algorithm to visualize (e.g. 'binary search')",
                                         true
+                                ),
+                        Commands.slash("summarizepdf", "Get an AI summary of an uploaded PDF")
+                                .addOption(
+                                        OptionType.ATTACHMENT,
+                                        "file",
+                                        "The PDF file to summarize",
+                                        true
                                 )
                 )
                 .queue(success ->

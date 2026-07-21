@@ -15,6 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import net.dv8tion.jda.api.entities.Message.Attachment;
+import java.io.InputStream;
+import java.net.URL;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +27,8 @@ public class CommandService {
     private final UserRepository userRepository;
     private final QuizService quizService;
     private final UserService userService;
+    private final PdfService pdfService;
+
 
     private static final int DISCORD_MAX_LENGTH = 2000;
 
@@ -466,6 +471,36 @@ public class CommandService {
         } catch (Exception e) {
             e.printStackTrace();
             event.getHook().sendMessage("❌ Something went wrong generating the flowchart.").queue();
+        }
+    }
+    public void handleSummarizePdf(SlashCommandInteractionEvent event) {
+
+        Attachment attachment = event.getOption("file").getAsAttachment();
+
+        if (!attachment.getFileName().toLowerCase().endsWith(".pdf")) {
+            event.reply("❌ Please upload a valid PDF file.")
+                    .setEphemeral(true)
+                    .queue();
+            return;
+        }
+
+        event.deferReply().queue();
+
+        try {
+            InputStream inputStream = new URL(attachment.getUrl()).openStream();
+            String extractedText = pdfService.extractText(inputStream);
+
+            if (extractedText.isBlank()) {
+                event.getHook().sendMessage("❌ Couldn't extract any text from this PDF (it may be a scanned image).").queue();
+                return;
+            }
+
+            String summary = aiService.summarizeText(extractedText);
+            sendAsEmbed(event, summary);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            event.getHook().sendMessage("❌ Something went wrong summarizing the PDF.").queue();
         }
     }
 }
